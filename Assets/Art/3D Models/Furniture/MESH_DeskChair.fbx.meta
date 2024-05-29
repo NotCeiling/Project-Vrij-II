@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1bf8be06e5011343b77005f9120ad76
+guid: 83681bb3bdcb9e04dbeb8392f1e04aca
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pillars
+      name: Pillars.001
     second: {fileID: 2100000, guid: 353f23476c692cc43bd7245ec6bb097b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood.001
+    second: {fileID: 2100000, guid: 61fbda0bf9f65d649a7eb925d7dcef8f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
