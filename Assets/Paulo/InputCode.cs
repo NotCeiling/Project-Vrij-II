@@ -38,7 +38,7 @@ public class InputCode : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (_canEscape && Input.GetKeyDown(KeyCode.Escape))
         {
             DisableInput();
             _canEscape = false;
