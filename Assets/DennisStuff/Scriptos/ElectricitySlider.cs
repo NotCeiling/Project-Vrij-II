@@ -40,7 +40,7 @@ public class ElectricitySlider : MonoBehaviour
 
             float targetPosition = Remap(GetMouseWorldPosition().y, bottomBorder, topBorder, -0.1f, 0.1f);
             targetPosition = Mathf.Clamp(targetPosition, -0.1f, 0.1f);
-            sliderHandle.localPosition = new Vector3(0, targetPosition, 0);
+            sliderHandle.localPosition = new Vector3(0, targetPosition, sliderHandle.transform.localPosition.z);
         }
         else
         {
