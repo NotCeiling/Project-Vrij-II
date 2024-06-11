@@ -46,7 +46,6 @@ public class DoorLockWheel : MonoBehaviour
         if (value < 0)
             value = 9;
 
-        Debug.Log(value);
         puzzleHolder.GetComponent<DoorLock>().WheelChangeMade(value);
     }
 

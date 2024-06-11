@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class CameraSwapper : MonoBehaviour
 {
-    public GameObject originalCam;
-    public GameObject otherCam;
+    public GameObject thirdPersonCam;
+    public GameObject interactionCam;
     public GameObject blockBox;
 
     public GameObject closeCarryPos;
     public GameObject roamingCarryPos;
 
 
-    public void Interact()
+    public void Interact(GameObject newCam, GameObject newBlockBox)
     {
+        interactionCam = newCam;
+        blockBox = newBlockBox;
+
         ToggleCam();
         ToggleBlockBox();
         ToggleCarryPos();
@@ -21,15 +24,15 @@ public class CameraSwapper : MonoBehaviour
 
     private void ToggleCam()
     {
-        if (originalCam.activeSelf)
+        if (thirdPersonCam.activeSelf)
         {
-            otherCam.SetActive(true);
-            originalCam.SetActive(false);
+            interactionCam.SetActive(true);
+            thirdPersonCam.SetActive(false);
         }
         else
         {
-            otherCam.SetActive(false);
-            originalCam.SetActive(true);
+            interactionCam.SetActive(false);
+            thirdPersonCam.SetActive(true);
         }
     }
 
@@ -45,13 +48,29 @@ public class CameraSwapper : MonoBehaviour
     {
         if (closeCarryPos.transform.childCount > 0)
         {
-            closeCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().HangPainting(roamingCarryPos);
-            closeCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().ToggleRoaming();
+            StartCoroutine(ChangeToRoaming());
         }
         else if (roamingCarryPos.transform.childCount > 0)
         {
-            roamingCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().HangPainting(closeCarryPos);
-            closeCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().ToggleRoaming();
+            StartCoroutine(ChangeToHolding());
         }
     }
+
+
+    private IEnumerator ChangeToRoaming()
+    {
+        closeCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().HangPainting(roamingCarryPos);
+        yield return new WaitForSeconds(1f);
+        roamingCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().ToggleRoaming();
+    }
+
+
+    private IEnumerator ChangeToHolding()
+    {
+        roamingCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().HangPainting(closeCarryPos);
+        yield return new WaitForSeconds(1f);
+        closeCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().ToggleRoaming();
+    }
+
+
 }

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class DragObject : MonoBehaviour
 {
-    public BoxCollider coll;
-    public Rigidbody rb;
+    private Rigidbody rb;
 
     public Vector3 targetPosition;
 
@@ -15,13 +14,15 @@ public class DragObject : MonoBehaviour
 
     private int inPosition;
     public int selected;
-    private int roaming;
+    public int roaming;
 
     public GameObject holder;
 
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
         if (transform.parent)
         {
             holder = transform.parent.gameObject;
@@ -42,7 +43,7 @@ public class DragObject : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0) && selected == 1)
         {
-            if (Physics.Raycast(GetMouseWorldPos() - transform.forward, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 20))
+            if (Physics.Raycast(GetMouseWorldPos() + transform.forward, transform.TransformDirection(-Vector3.forward), out RaycastHit hit, 20))
             {
                 if (hit.transform.CompareTag("PaintingZone") && hit.transform.gameObject != holder)
                 {
@@ -67,12 +68,17 @@ public class DragObject : MonoBehaviour
 
         if (inPosition == 1)
         {
-            rb.rotation = Quaternion.Euler(new Vector3(0.5f * rb.velocity.y, 0.35f * rb.velocity.x, -0.5f * rb.velocity.x));
+            //rb.rotation = Quaternion.Euler(new Vector3(0.5f * rb.velocity.y, 0.35f * rb.velocity.x, -0.5f * rb.velocity.x));
             rb.velocity = new Vector3(0, 0, 0);
         }
-        else if (roaming == 0)
+        else
         {
             MoveToNewPosition();
+        }
+
+        if (roaming == 1)
+        {
+            transform.parent.position = targetPosition;
         }
 
         if (selected == 1)
