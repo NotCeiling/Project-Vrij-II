@@ -12,6 +12,14 @@ public class CameraSwapper : MonoBehaviour
     public GameObject roamingCarryPos;
 
 
+    public void SmallInteract(GameObject newCam)
+    {
+        interactionCam = newCam;
+
+        ToggleCam();
+        ToggleCarryPos();
+    }
+
     public void Interact(GameObject newCam, GameObject newBlockBox)
     {
         interactionCam = newCam;
