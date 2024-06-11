@@ -44,17 +44,17 @@ public class ElectricityPuzzle : MonoBehaviour
         {
             if (frequency == 0)
             {
-                numberLights[knobValue].GetComponent<Renderer>().material = offMat;
+                numberLights[knobValue - 1].GetComponent<Renderer>().material = offMat;
             }
 
             if (frequency == 1)
             {
-                numberLights[knobValue].GetComponent<Renderer>().material = greenMat;
+                numberLights[knobValue - 1].GetComponent<Renderer>().material = greenMat;
             }
 
             if (frequency > 1)
             {
-                numberLights[knobValue].GetComponent<Renderer>().material = redMat;
+                numberLights[knobValue - 1].GetComponent<Renderer>().material = redMat;
             }
         }
     }

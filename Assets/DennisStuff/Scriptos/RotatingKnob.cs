@@ -7,6 +7,7 @@ public class RotatingKnob : MonoBehaviour
     public GameObject lookAtMouse;
     public GameObject puzzleHolder;
     private int selected;
+
     public int value {get; private set;}
     public int oldValue { get; private set; }
 
@@ -34,11 +35,11 @@ public class RotatingKnob : MonoBehaviour
             mousePosition.z = zCoord;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+            Vector2 direction = new(mousePos.y - transform.position.y, mousePos.z - transform.position.z);
 
             lookAtMouse.transform.up = direction;
 
-            float angleDifference = lookAtMouse.transform.eulerAngles.z - transform.eulerAngles.z;
+            float angleDifference = lookAtMouse.transform.eulerAngles.z - transform.eulerAngles.z + 90;
 
             if (angleDifference > 180)
                 angleDifference -= 360;
