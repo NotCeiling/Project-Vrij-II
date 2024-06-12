@@ -11,6 +11,7 @@ public class CameraSwapper : MonoBehaviour
     public GameObject closeCarryPos;
     public GameObject roamingCarryPos;
 
+    public GameObject InteractPopup;
 
     public void SmallInteract(GameObject newCam)
     {
@@ -85,6 +86,5 @@ public class CameraSwapper : MonoBehaviour
         yield return new WaitForSeconds(1f);
         closeCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().ToggleRoaming();
     }
-
 
 }

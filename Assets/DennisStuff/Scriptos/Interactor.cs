@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class Interactor : MonoBehaviour
 {
-    public GameObject interactTooltip;
+    private GameObject interactTooltip;
     private int inRange;
 
     public UnityEvent interact;
 
+    private void Start()
+    {
+        interactTooltip = GameObject.Find("GameManager").GetComponent<CameraSwapper>().InteractPopup;
+    }
 
     private void Update()
     {

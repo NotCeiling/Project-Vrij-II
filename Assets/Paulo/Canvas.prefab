@@ -223,7 +223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 23.23, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.0013003349, y: 0.1699}
+  m_AnchoredPosition: {x: -0.0012817383, y: 0.16992188}
   m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2933089848778441397
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1 &5343800998514806658
 GameObject:
   m_ObjectHideFlags: 0
