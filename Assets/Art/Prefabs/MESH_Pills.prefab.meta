@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Prefabs/MESH_Pills.prefab.meta
 guid: 0a4295b9b241fbe4c8f8c934ba8198f4
+========
+guid: 5b2e2a1fa12c9e14085fca3b54bccafd
+>>>>>>>> origin/Amy:Assets/Art/3D Models/Characters/Friday/Friday.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
