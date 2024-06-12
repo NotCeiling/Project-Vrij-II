@@ -71,15 +71,16 @@ public class DragObject : MonoBehaviour
             //rb.rotation = Quaternion.Euler(new Vector3(0.5f * rb.velocity.y, 0.35f * rb.velocity.x, -0.5f * rb.velocity.x));
             rb.velocity = new Vector3(0, 0, 0);
         }
-        else
+        else if (roaming == 0)
         {
             MoveToNewPosition();
         }
 
         if (roaming == 1)
         {
-            transform.parent.position = targetPosition;
+            transform.localPosition = new Vector3(0, 0, 0);
         }
+
 
         if (selected == 1)
         {
@@ -123,6 +124,7 @@ public class DragObject : MonoBehaviour
         transform.SetParent(newHolder.transform);
         holder = newHolder;
         targetPosition = newHolder.transform.position;
+        transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 
     public void ToggleRoaming()

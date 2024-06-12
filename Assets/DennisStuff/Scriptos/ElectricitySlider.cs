@@ -68,9 +68,9 @@ public class ElectricitySlider : MonoBehaviour
         if (distanceToBottom >= 0.25 && distanceToBottom < 0.5)
             value = 1;
         if (distanceToBottom >= 0.5 && distanceToBottom < 0.75)
-            value = 1; 
+            value = 2; 
         if (distanceToBottom >= 0.75)
-            value = 0;
+            value = 3;
     }
 
 }
