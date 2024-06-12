@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SuspicionTracker : MonoBehaviour
 {
-    public float zackTimer, timTimer, deanTimer, fridayTimer, alisonTimer;
+    public static float zackTimer, timTimer, deanTimer, fridayTimer, alisonTimer;
     public string primeSuspect;
 
 
