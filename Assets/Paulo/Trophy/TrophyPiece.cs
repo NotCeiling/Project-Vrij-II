@@ -30,11 +30,6 @@ public class TrophyPiece : MonoBehaviour, IPointerClickHandler
         }
         
         _moveCoroutine = StartCoroutine(MoveToPosition(target.position, target.eulerAngles, 0.25f));
-        
-        return;
-        var t = transform;
-        t.position = target.position;
-        t.eulerAngles = target.eulerAngles;
     }
     
     public void ResetTransform()
@@ -45,11 +40,6 @@ public class TrophyPiece : MonoBehaviour, IPointerClickHandler
         }
         
         _moveCoroutine = StartCoroutine(MoveToPosition(_initialWorldPosition, _initialWorldRotation, 0.25f));
-        
-        return;
-        var t = transform;
-        t.position = _initialWorldPosition;
-        t.eulerAngles = _initialWorldRotation;
     }
 
     public void OnPointerClick(PointerEventData eventData)
