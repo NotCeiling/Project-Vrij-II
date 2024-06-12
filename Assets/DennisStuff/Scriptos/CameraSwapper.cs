@@ -26,7 +26,7 @@ public class CameraSwapper : MonoBehaviour
         blockBox = newBlockBox;
 
         ToggleCam();
-        ToggleBlockBox();
+        StartCoroutine(ToggleBlockBox());
         ToggleCarryPos();
     }
 
@@ -44,12 +44,18 @@ public class CameraSwapper : MonoBehaviour
         }
     }
 
-    private void ToggleBlockBox()
+
+    private IEnumerator ToggleBlockBox()
     {
         if (blockBox.activeSelf)
+        {
+            yield return new WaitForSeconds(1); 
             blockBox.SetActive(false);
+        }
         else
+        {
             blockBox.SetActive(true);
+        }
     }
 
     private void ToggleCarryPos()

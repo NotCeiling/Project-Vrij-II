@@ -32,17 +32,19 @@ public class RotatePlate : MonoBehaviour
         {
             if (selected == 1)
             {
-                distanceToLeft = Mathf.Clamp(GetMouseWorldPosition().x - leftBorder, 0, 2);
-                distanceToRight = Mathf.Clamp(rightBorder - GetMouseWorldPosition().x, 0, 2);
+                Debug.Log(leftBorder + " and " + rightBorder);
 
-                float targetRotation = Remap(GetMouseWorldPosition().x, rightBorder, leftBorder, 0, 180);
+                distanceToLeft = Mathf.Clamp(leftBorder - GetMouseWorldPosition().z, 0, 2);
+                distanceToRight = Mathf.Clamp(GetMouseWorldPosition().z - rightBorder, 0, 2);
+
+                float targetRotation = Remap(GetMouseWorldPosition().z, rightBorder, leftBorder, 0, 180);
                 targetRotation = Mathf.Clamp(targetRotation, 0, 180);
                 transform.localRotation = Quaternion.Euler(0, targetRotation, 0);
             }
             else
             {
-                leftBorder = GetMouseWorldPosition().x - distanceToLeft;
-                rightBorder = GetMouseWorldPosition().x + distanceToRight;
+                leftBorder = GetMouseWorldPosition().z + distanceToLeft;
+                rightBorder = GetMouseWorldPosition().z - distanceToRight;
             }
         }
     }

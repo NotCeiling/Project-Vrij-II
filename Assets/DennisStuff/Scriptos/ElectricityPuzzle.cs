@@ -6,12 +6,15 @@ public class ElectricityPuzzle : MonoBehaviour
 {
     public GameObject[] knobs;
     public GameObject[] numberLights;
+    public Material[] numberLightColors;
     public GameObject[] sliders;
+
+    private bool numberColorsShowing;
 
 
     public GameObject phase2Plate;
 
-    public Material offMat, greenMat, redMat, yellowMat, blueMat;
+    public Material offMat, onMat, greenMat, redMat, yellowMat, blueMat;
 
     public string knobCode = "368712945";
     public string sliderCode = "123123123";
@@ -49,12 +52,12 @@ public class ElectricityPuzzle : MonoBehaviour
 
             if (frequency == 1)
             {
-                numberLights[knobValue - 1].GetComponent<Renderer>().material = greenMat;
+                numberLights[knobValue - 1].GetComponent<Renderer>().material = onMat;
             }
 
             if (frequency > 1)
             {
-                numberLights[knobValue - 1].GetComponent<Renderer>().material = redMat;
+                numberLights[knobValue - 1].GetComponent<Renderer>().material = offMat;
             }
         }
     }
@@ -91,6 +94,28 @@ public class ElectricityPuzzle : MonoBehaviour
         if (sliderCode == codeAttempt)
         {
             Debug.Log("Lights are back on!");
+        }
+    }
+
+    public void ToggleNumberColors()
+    {
+        if (numberColorsShowing)
+        {
+            numberColorsShowing = false;
+
+            foreach (GameObject light in numberLights)
+            {
+                light.GetComponent<Renderer>().material = onMat;
+            }
+        }
+        else
+        {
+            numberColorsShowing = true;
+
+            for (int i = 0; i <= numberLights.Length - 1; i++)
+            {
+                numberLights[i].GetComponent<Renderer>().material = numberLightColors[i];
+            }
         }
     }
 
