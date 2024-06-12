@@ -62,7 +62,7 @@ public class SuspicionPlayer : MonoBehaviour
 
         var zeroOneValue = value / maxValue;
         _suspicionBar.fillAmount = zeroOneValue * (1 - minimumSuspicion) + minimumSuspicion;
-        _secondsText.text = string.Format(_secondsFormat, value);
+        _secondsText.text = string.Format(_secondsFormat, Mathf.RoundToInt(value));
         
         if (zeroOneValue >= 0.9f)
         {
