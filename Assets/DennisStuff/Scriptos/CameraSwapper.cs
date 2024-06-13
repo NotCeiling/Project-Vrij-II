@@ -13,12 +13,13 @@ public class CameraSwapper : MonoBehaviour
 
     public GameObject InteractPopup;
 
+
     public void SmallInteract(GameObject newCam)
     {
         interactionCam = newCam;
 
         ToggleCam();
-        ToggleCarryPos();
+        //ToggleCarryPos();
     }
 
     public void Interact(GameObject newCam, GameObject newBlockBox)
@@ -28,10 +29,10 @@ public class CameraSwapper : MonoBehaviour
 
         ToggleCam();
         StartCoroutine(ToggleBlockBox());
-        ToggleCarryPos();
+        //ToggleRoamingMode();
     }
 
-    private void ToggleCam()
+    public void ToggleCam()
     {
         if (thirdPersonCam.activeSelf)
         {
@@ -84,6 +85,11 @@ public class CameraSwapper : MonoBehaviour
     {
         roamingCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().HangPainting(closeCarryPos);
         yield return new WaitForSeconds(1f);
+        closeCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().ToggleRoaming();
+    }
+
+    private void ToggleRoamingMode()
+    {
         closeCarryPos.transform.GetChild(0).GetComponentInChildren<DragObject>().ToggleRoaming();
     }
 

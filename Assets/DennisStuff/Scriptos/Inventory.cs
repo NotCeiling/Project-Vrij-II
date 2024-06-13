@@ -6,6 +6,14 @@ public class Inventory : MonoBehaviour
 {
     public List<string> itemList = new();
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            ClearInventory();
+        }
+    }
+
 
     public void AddItem(string itemToAdd)
     {
@@ -25,7 +33,6 @@ public class Inventory : MonoBehaviour
             if (item == itemToRemove)
                 itemList.Remove(item);
         }
-
     }
 
     public bool CheckForItem(string itemToCheck)
@@ -38,4 +45,14 @@ public class Inventory : MonoBehaviour
 
         return false;
     }
+
+    private void ClearInventory()
+    {
+        foreach (string item in itemList)
+        {
+            itemList.Remove(item);
+        }
+    }
+
+
 }

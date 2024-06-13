@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.Events;
 
 public class DoorLock : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class DoorLock : MonoBehaviour
     public GameObject door;
 
     private GameObject gm;
+    private GameObject player;
+
+    public UnityEvent onUnlock;
 
     public string cardName;
     public string code = "1234";
@@ -23,6 +27,7 @@ public class DoorLock : MonoBehaviour
     private void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void WheelChangeMade(int newWheelValue)
@@ -40,7 +45,10 @@ public class DoorLock : MonoBehaviour
         }
 
         if (code == codeAttempt)
+        {
             unlocked = true;
+            onUnlock.Invoke();
+        }
         else
             unlocked = false;
     }
@@ -61,6 +69,7 @@ public class DoorLock : MonoBehaviour
         else
         {
             gm.GetComponent<CameraSwapper>().Interact(interactionCam, blockBox);
+            player.GetComponent<ThirdPersonMovement>().ToggleMovement();
         }
     }
 

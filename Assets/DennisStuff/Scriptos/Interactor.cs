@@ -27,13 +27,13 @@ public class Interactor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ToggleTooltip();
+        interactTooltip.SetActive(true);
         inRange = 1;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ToggleTooltip();
+        interactTooltip.SetActive(false);
         inRange = 0;
     }
 

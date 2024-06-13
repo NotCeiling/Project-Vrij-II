@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DrawerLockScript : MonoBehaviour
 {
     public GameObject[] wheels;
     public GameObject drawer;
+
+    public UnityEvent finish;
 
     public string code = "1234";
 
@@ -38,6 +41,7 @@ public class DrawerLockScript : MonoBehaviour
             drawer.transform.position = drawer.transform.position + transform.forward * 0.007f;
             interactionCam.transform.position += new Vector3(0, 0.007f, 0.001f);
             interactionCam.transform.Rotate(1.3f, 0f, 0f);
+            finish.Invoke();
             yield return new WaitForSeconds(0.01f);
         }
     }

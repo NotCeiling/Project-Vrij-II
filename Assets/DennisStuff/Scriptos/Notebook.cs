@@ -29,7 +29,7 @@ public class Notebook : MonoBehaviour
     {
         inPosition = (Vector3.Distance(transform.localPosition, targetPos) > 0.01f) ? false : true;
 
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             notesShowing = !notesShowing;
             inPosition = false;

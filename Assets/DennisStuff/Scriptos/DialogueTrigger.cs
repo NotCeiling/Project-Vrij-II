@@ -1,24 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue greeting, phone, knife;
+    public Dialogue dialogue1, dialogue2, dialogue3, dialogue4, dialogue5;
+
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
 
     public GameObject options;
+    private GameObject gm;
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            TriggerDialogueGreeting();
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            TriggerDialoguePhone();
-        
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-            TriggerDialogueKnife();
-
+        gm = GameObject.Find("GameManager");
     }
 
 
@@ -30,16 +28,30 @@ public class DialogueTrigger : MonoBehaviour
             options.SetActive(true);
     }
 
-    public void TriggerDialogueGreeting()
+    public void ChangeTextSource()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(greeting);
+        gm.GetComponent<DialogueManager>().nameText = nameText;
+        gm.GetComponent<DialogueManager>().dialogueText = dialogueText;
     }
-    public void TriggerDialoguePhone()
+
+    public void TriggerDialogue1()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(phone);
+        gm.GetComponent<DialogueManager>().StartDialogue(dialogue1);
     }
-    public void TriggerDialogueKnife()
+    public void TriggerDialogue2()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(knife);
+        gm.GetComponent<DialogueManager>().StartDialogue(dialogue2);
+    }
+    public void TriggerDialogue3()
+    {
+        gm.GetComponent<DialogueManager>().StartDialogue(dialogue3);
+    }
+    public void TriggerDialogue4()
+    {
+        gm.GetComponent<DialogueManager>().StartDialogue(dialogue4);
+    }
+    public void TriggerDialogue5()
+    {
+        gm.GetComponent<DialogueManager>().StartDialogue(dialogue5);
     }
 }

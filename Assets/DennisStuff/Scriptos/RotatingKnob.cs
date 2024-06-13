@@ -44,12 +44,12 @@ public class RotatingKnob : MonoBehaviour
             if (angleDifference > 180)
                 angleDifference -= 360;
 
-            if (Vector2.Distance(mousePos, transform.position) > 0.1f && angleDifference > 18 && angleDifference < 288)
+            if (Vector2.Distance(mousePos, transform.position) > 0.08f && angleDifference > 18 && angleDifference < 288)
             {
                 RotateCounterClockwise();
             }
 
-            if (Vector2.Distance(mousePos, transform.position) > 0.1f && angleDifference < -18)
+            if (Vector2.Distance(mousePos, transform.position) > 0.08f && angleDifference < -18)
             {
                 RotateClockwise();
             }

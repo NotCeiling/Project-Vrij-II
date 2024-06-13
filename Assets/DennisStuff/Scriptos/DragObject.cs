@@ -117,6 +117,7 @@ public class DragObject : MonoBehaviour
         transform.SetParent(newHolder.transform);
         holder = newHolder;
         rb.rotation = Quaternion.Euler(new Vector3(0, 15, 0));
+        roaming = 1;
     }
 
     public void HangPainting(GameObject newHolder)
@@ -125,6 +126,7 @@ public class DragObject : MonoBehaviour
         holder = newHolder;
         targetPosition = newHolder.transform.position;
         transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        roaming = 0;
     }
 
     public void ToggleRoaming()
