@@ -3030,7 +3030,7 @@ PrefabInstance:
     - target: {fileID: 5643006640324646222, guid: c36bf2d40f76a274b963b5b42ffe4cd3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -28.333149
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5730133439098936052, guid: c36bf2d40f76a274b963b5b42ffe4cd3,
         type: 3}
@@ -3122,7 +3122,7 @@ PrefabInstance:
     - target: {fileID: 8785533261140250551, guid: c36bf2d40f76a274b963b5b42ffe4cd3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9070850594049355538, guid: c36bf2d40f76a274b963b5b42ffe4cd3,
         type: 3}
@@ -14849,12 +14849,12 @@ PrefabInstance:
     - target: {fileID: 2577141514370662624, guid: 5d1b88e4e6137384eaac448d6a65b86a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.00000006914511
+      value: -0.000000034735997
       objectReference: {fileID: 0}
     - target: {fileID: 2577141514370662624, guid: 5d1b88e4e6137384eaac448d6a65b86a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000000010072556
+      value: -5.060084e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2577141514370662624, guid: 5d1b88e4e6137384eaac448d6a65b86a,
         type: 3}
@@ -14964,12 +14964,12 @@ PrefabInstance:
     - target: {fileID: 9146620152539309099, guid: 5d1b88e4e6137384eaac448d6a65b86a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.00000003458726
+      value: -0.000000069249275
       objectReference: {fileID: 0}
     - target: {fileID: 9146620152539309099, guid: 5d1b88e4e6137384eaac448d6a65b86a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000000011317078
+      value: -0.000000002265862
       objectReference: {fileID: 0}
     - target: {fileID: 9146620152539309099, guid: 5d1b88e4e6137384eaac448d6a65b86a,
         type: 3}
@@ -38080,7 +38080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7988622200664078139}
   serializedVersion: 2
-  m_LocalRotation: {x: -5.646312e-10, y: 0.9994651, z: -0.032702874, w: -0.000000017256255}
+  m_LocalRotation: {x: -0.0000000028329394, y: 0.9994651, z: -0.032702874, w: -0.000000086580286}
   m_LocalPosition: {x: 4.420001, y: 2.9176965, z: 29.579468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

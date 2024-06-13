@@ -61,9 +61,15 @@ public class DoorLock : MonoBehaviour
             if (interactAllowed)
             {
                 if (doorIsOpen)
+                {
                     StartCoroutine(RotateDoor(1));
+                }
                 else
+                {
                     StartCoroutine(RotateDoor(-1));
+                    gm.GetComponent<CameraSwapper>().Interact(interactionCam, blockBox);
+                    player.GetComponent<ThirdPersonMovement>().ToggleMovement();
+                }
             }
         }
         else

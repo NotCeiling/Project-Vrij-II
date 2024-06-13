@@ -63,6 +63,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public void ToggleMovement()
     {
+        Debug.Log(" S:DFJ:IDFJ:");
         if (canMove == 1)
             canMove = 0;
         else
