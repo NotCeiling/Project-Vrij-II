@@ -39,7 +39,6 @@ public class SuspicionPlayer : MonoBehaviour
     private void Start()
     {
         _highlight.SetActive(false);
-        
         SetSlider();
     }
 
@@ -48,7 +47,7 @@ public class SuspicionPlayer : MonoBehaviour
         var maxValue = Mathf.Max(SuspicionTracker.zackTimer, SuspicionTracker.timTimer, SuspicionTracker.deanTimer,
             SuspicionTracker.fridayTimer, SuspicionTracker.alisonTimer);
         maxValue = Mathf.Max(maxValue, 0.01f);
-        
+
         // switch to set value
         var value = _suspect switch
         {

@@ -47,7 +47,6 @@ public class DoorLock : MonoBehaviour
         if (code == codeAttempt)
         {
             unlocked = true;
-            onUnlock.Invoke();
         }
         else
             unlocked = false;
